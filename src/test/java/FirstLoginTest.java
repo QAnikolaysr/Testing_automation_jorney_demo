@@ -1,5 +1,4 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
@@ -12,14 +11,10 @@ public class FirstLoginTest {
     //зайдем
     @Test
     public void firstLogin()  {
-
         WebDriver browser = new ChromeDriver();
         browser.get("https://saucedemo.com/");
-
         browser.findElement(By.id("user-name")).sendKeys("standard_user");
-
-        browser.findElement(By.cssSelector("[data-test='password']")).sendKeys("secret_sauce");
-
+        browser.findElement(By.cssSelector("[data-test=password]")).sendKeys("secret_sauce");
         browser.findElement(By.cssSelector("[name='login-button']")).click();
 
         boolean titleIsDisplayed = browser.findElement(By.cssSelector("[data-test='title']")).isDisplayed();
