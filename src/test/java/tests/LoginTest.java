@@ -11,9 +11,11 @@ public class LoginTest extends BaseTest {
     @Test
     public void correctLogin(){
     loginPage.open();
+    loginPage.login("standard_user", "secret_sauce");
 
         boolean titleIsDisplayed = driver.findElement(By.cssSelector("[data-test='title']")).isDisplayed();
         assertTrue("Заголовок не виден", titleIsDisplayed);
+        
         String titleName = driver.findElement(By.cssSelector("[data-test='title']")).getText();
         assertEquals(titleName, "Products", "Не верный заголовок");
     }
