@@ -13,10 +13,8 @@ public class LoginTest extends BaseTest {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
 
-        assertTrue(productsPage.isTitleIsDisplayed(),"Заголовок не виден");
-
-        String titleName = driver.findElement(By.cssSelector("[data-test='title']")).getText();
-        assertEquals(titleName, "Products", "Не верный заголовок");
+        assertTrue(productsPage.isTitleIsDisplayed(), "Заголовок не виден");
+        assertEquals(productsPage.getTitle(), "Products", "Не верный заголовок");
     }
 
     @Test
@@ -25,10 +23,8 @@ public class LoginTest extends BaseTest {
         loginPage.login("locked_out_user", "secret_sauce");
 
 
-        boolean errorIsDisplayed = driver.findElement(By.cssSelector("[data-test='error']")).isDisplayed();
-        assertTrue("Нет сообщения об ошибке", errorIsDisplayed);
-        assertEquals(driver.findElement(By.cssSelector("[data-test='error']")).getText(),
-                "Epic sadface: Sorry, this user has been locked out.",
+        assertTrue(loginPage.isErrorDisplayed(), "Нет сообщения об ошибке");
+        assertEquals(loginPage.getErrorText(), "Epic sadface: Sorry, this user has been locked out.",
                 "Не верный текст сообщения об ошибке");
     }
 }
