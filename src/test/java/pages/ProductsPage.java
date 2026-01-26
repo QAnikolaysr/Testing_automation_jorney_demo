@@ -4,17 +4,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ProductsPage {
-    WebDriver driver;
+public class ProductsPage extends BasePage {
     private final By title = By.cssSelector("[data-test='title']");
 
     public ProductsPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
+
     public boolean isTitleIsDisplayed() {
         return driver.findElement(title).isDisplayed();
     }
-    public String getTitle()   {
+
+    public String getTitle() {
         return driver.findElement(title).getText();
     }
 }
