@@ -13,13 +13,14 @@ import java.time.Duration;
 
 public class BaseTest {
     public WebDriver driver;
-    LoginPage  loginPage;
-  ProductsPage productsPage;
+    LoginPage loginPage;
+    ProductsPage productsPage;
+
     @BeforeMethod
-    public void setup(){
+    public void setup() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments ("start-maximized");
-        options.addArguments ("--guest");
+        options.addArguments("start-maximized");
+        options.addArguments("--guest");
         //options.addArguments ("--window-size=1920,1080");
         //  options.addArguments ("headless");
         driver = new ChromeDriver(options);
@@ -28,6 +29,7 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
     }
+
     @AfterMethod
     public void closeBrouser() {
         driver.quit();

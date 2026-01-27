@@ -27,6 +27,7 @@ public class LoginTest extends BaseTest {
         assertEquals(loginPage.getErrorText(), "Epic sadface: Sorry, this user has been locked out.",
                 "Не верный текст сообщения об ошибке");
     }
+
     @Test
     public void missingLogin() {
         loginPage.open();
@@ -37,6 +38,7 @@ public class LoginTest extends BaseTest {
         assertEquals(loginPage.getErrorText(), "Epic sadface: Username is required",
                 "Не верный текст сообщения об ошибке");
     }
+
     @Test
     public void missingPassword() {
         loginPage.open();
@@ -47,6 +49,7 @@ public class LoginTest extends BaseTest {
         assertEquals(loginPage.getErrorText(), "Epic sadface: Password is required",
                 "Не верный текст сообщения об ошибке");
     }
+
     @Test
     public void invalidLogin() {
         loginPage.open();

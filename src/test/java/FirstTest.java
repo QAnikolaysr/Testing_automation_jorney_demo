@@ -30,16 +30,16 @@ public class FirstTest {
         assertEquals(actuelResult, "M");
     }
 
-   @Test
-   public void checkMetod3() {
-       String actuelResult = trialCode(15);
-       assertEquals(actuelResult, "S");
-   }
+    @Test
+    public void checkMetod3() {
+        String actuelResult = trialCode(15);
+        assertEquals(actuelResult, "S");
+    }
 
 
-   @Test
-   public void checkMetod4() {
-           String actuelResult = trialCode(17);
-           assertEquals(actuelResult, "Fail");
+    @Test
+    public void checkMetod4() {
+        String actuelResult = trialCode(17);
+        assertEquals(actuelResult, "Fail");
     }
 }
