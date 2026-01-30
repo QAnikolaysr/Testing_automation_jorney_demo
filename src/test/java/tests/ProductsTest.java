@@ -2,6 +2,9 @@ package tests;
 
 import org.testng.annotations.Test;
 import pages.ProductsPage;
+
+import static org.testng.Assert.assertEquals;
+
 public class ProductsTest extends BaseTest {
     @Test
     public void checkGoodsAdded() {
@@ -11,6 +14,7 @@ public class ProductsTest extends BaseTest {
         productsPage.addGoodsToCart("Sauce Labs Onesie");
         productsPage.addGoodsToCart("Sauce Labs Fleece Jacket");
         productsPage.addGoodsToCart("Test.allTheThings() T-Shirt (Red)");
-assertEquals
+        assertEquals(productsPage.checkContrValue(), "3");
+        assertEquals(productsPage.checkCountrColor(), "rgba(226, 35, 26, 1)");
     }
 }
