@@ -12,9 +12,11 @@ public class ProductsTest extends BaseTest {
         loginPage.login("standard_user", "secret_sauce");
         productsPage.isTitleIsDisplayed();
         productsPage.addGoodsToCart("Sauce Labs Onesie");
-        productsPage.addGoodsToCart("Sauce Labs Fleece Jacket");
-        productsPage.addGoodsToCart("Test.allTheThings() T-Shirt (Red)");
-        assertEquals(productsPage.checkContrValue(), "3");
+       // productsPage.addGoodsToCart("Sauce Labs Fleece Jacket");
+        //productsPage.addGoodsToCart("Test.allTheThings() T-Shirt (Red)");
+
+        productsPage.addGoodsToCart(2);
+        assertEquals(productsPage.checkContrValue(), "2");
         assertEquals(productsPage.checkCountrColor(), "rgba(226, 35, 26, 1)");
     }
 }

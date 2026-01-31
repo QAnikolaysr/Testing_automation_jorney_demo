@@ -27,12 +27,17 @@ public class ProductsPage extends BasePage {
         By addToCart = By.xpath(ADD_TO_CART_PATTERN.formatted(goodsName));
         driver.findElement(addToCart).click();
     }
+    public void addGoodsToCart(int goodsIndex) {
+
+        driver.findElements(By.xpath("//*[text()='Add to cart']")).get(goodsIndex).click();
+    }
+
     public String checkContrValue() {
         return driver.findElement(cartCounter).getText();
 
     }
+
     public String checkCountrColor() {
         return driver.findElement(cartCounter).getCssValue("background-color");
     }
 }
-

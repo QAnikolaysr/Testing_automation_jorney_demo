@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
-    private final By logininput = By.id("user-name");
+    private final By logIninput = By.id("user-name");
     private final By passwordInput = By.cssSelector("[data-test=password]");
-    private final By loginbutton = By.cssSelector("[data-test=login-button]");
+    private final By loginButton = By.cssSelector("[data-test=login-button]");
     private final By errorMsg = By.cssSelector("[data-test='error']");
 
     public LoginPage(WebDriver driver) {
@@ -18,11 +18,17 @@ public class LoginPage extends BasePage {
     }
 
     public void login(String user, String password) {
-        driver.findElement(logininput).sendKeys(user);
-        driver.findElement(passwordInput).sendKeys(password);
-        driver.findElement(loginbutton).click();
+        fillLoginField(user);
+        fillPasswordField(password);
+        driver.findElement(loginButton).click();
+    }
+    public void fillLoginField(String user) {
+        driver.findElement(logIninput).sendKeys(user);
     }
 
+    public void fillPasswordField(String password) {
+        driver.findElement(passwordInput).sendKeys(password);
+    }
     public boolean isErrorDisplayed() {
         return driver.findElement(errorMsg).isDisplayed();
     }
