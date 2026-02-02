@@ -22,6 +22,7 @@ public class LoginPage extends BasePage {
         fillPasswordField(password);
         driver.findElement(loginButton).click();
     }
+
     public void fillLoginField(String user) {
         driver.findElement(logIninput).sendKeys(user);
     }
@@ -29,6 +30,7 @@ public class LoginPage extends BasePage {
     public void fillPasswordField(String password) {
         driver.findElement(passwordInput).sendKeys(password);
     }
+
     public boolean isErrorDisplayed() {
         return driver.findElement(errorMsg).isDisplayed();
     }

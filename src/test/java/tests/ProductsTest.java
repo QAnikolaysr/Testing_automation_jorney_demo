@@ -19,12 +19,12 @@ public class ProductsTest extends BaseTest {
         loginPage.login("standard_user", "secret_sauce");
         assertEquals(productsPage.checkTitleName(), "Products");
         assertTrue(productsPage.isTitleIsDisplayed());
-        for (int i=0;i< goodsList.size();i++) {
+        for (int i = 0; i < goodsList.size(); i++) {
             productsPage.addGoodsToCart(goodsList.get(i));
         }
+        //productsPage.addGoodsToCart(2);
 
-        productsPage.addGoodsToCart(2);
-        assertEquals(productsPage.checkContrValue(), "2");
+        assertEquals(productsPage.checkContrValue(), "3");
         assertEquals(productsPage.checkCountrColor(), "rgba(226, 35, 26, 1)");
     }
 }
