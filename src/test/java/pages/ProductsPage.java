@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductsPage extends BasePage {
     private static final String ADD_TO_CART_PATTERN =
@@ -32,7 +31,6 @@ public class ProductsPage extends BasePage {
 
     public String checkContrValue() {
         return driver.findElement(cartCounter).getText();
-
     }
 
     public String checkCountrColor() {
