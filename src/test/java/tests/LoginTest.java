@@ -12,7 +12,15 @@ import static org.testng.Assert.assertTrue;
 import static user.UserFactory.withAdminPermission;
 
 public class LoginTest extends BaseTest {
-    @Test(invocationCount = 1, priority = 2, enabled = true)
+    @Test(invocationCount = 1, priority = 2, enabled = true, description = "тест проверяет авторизацию пользователя")
+    @Epic("Тестирование интернет-площадки")
+    @Feature("Проверка входа на сайт")
+    @Story("GGGGGGGGGG")
+    @Severity(SeverityLevel.NORMAL)
+    @Owner("Nik Rom nik@gmail.com")
+    @TmsLink("Testing_automation_jorney_demo")
+    @Issue("Testing_automation_jorney_demo")
+
     public void correctLogin() {
         System.out.println("Login Test!!!!!! in thread: " + Thread.currentThread().getName());
 
@@ -20,6 +28,7 @@ public class LoginTest extends BaseTest {
         loginPage.login(withAdminPermission());
 
         assertTrue(productsPage.isTitleIsDisplayed(), "Заголовок не виден");
+        AllureUtils.takeScreenshot(driver);
         assertEquals(productsPage.checkTitleName(), PRODUCTS.getDisplayName(), "Не верный заголовок");
     }
 
